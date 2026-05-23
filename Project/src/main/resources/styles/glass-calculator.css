@@ -1,0 +1,209 @@
+/* Glass Calculator - centralized button styling and CSS-based press animations
+ * All hover colors are concrete literals to prevent CssStyleHelper infinite recursion
+ * (StackOverflowError in resolveLookups when using derive(-fx-background-color, ...))
+ */
+
+.glass-button {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-cursor: hand;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+    -fx-font-smoothing-type: lcd;
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 10, 0.3, 0, 4);
+}
+
+/* Press animation (instant scale on :pressed) */
+.glass-button:pressed {
+    -fx-scale-x: 0.94;
+    -fx-scale-y: 0.94;
+}
+
+/* ========== HOVER STATES (all literals – no derive/lookup) ========== */
+
+/* Base glass hover */
+.glass-button:hover {
+    -fx-background-color: #444;
+}
+
+/* Numeric / basic keypad */
+.calc-button {
+    -fx-background-color: #333;
+    -fx-text-fill: white;
+}
+.calc-button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* Special function buttons (gray) */
+.calc-button.ac,
+.calc-button.special {
+    -fx-background-color: #a6a6a6;
+    -fx-text-fill: black;
+}
+
+/* Operator / equals (orange) */
+.calc-button.operator,
+.calc-button.equals {
+    -fx-background-color: #ff9500;
+    -fx-text-fill: white;
+}
+.calc-button.operator:hover,
+.calc-button.equals:hover {
+    -fx-background-color: #ffb143;
+}
+
+/* Scientific functions (cyan text) */
+.sci-button {
+    -fx-background-color: #444;
+    -fx-text-fill: #0ff;
+}
+.sci-button:hover {
+    -fx-background-color: #555;
+}
+
+/* Memory buttons */
+.mem-button {
+    -fx-background-color: rgba(80,80,90,0.6);
+    -fx-text-fill: #ffeb3b;
+}
+.mem-button:hover {
+    -fx-background-color: rgba(90,90,100,0.7);
+}
+
+/* Convert button */
+.convert-button {
+    -fx-background-color: #ff9500;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+.convert-button:hover {
+    -fx-background-color: #ffb143;
+}
+
+/* Favorite currency chips */
+.fav-button {
+    -fx-background-color: #333;
+    -fx-text-fill: #ddd;
+    -fx-font-size: 11px;
+}
+.fav-button:hover {
+    -fx-background-color: #555;
+}
+
+/* Dialog buttons (history Clear, etc.) */
+.dialog-button {
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+}
+.dialog-button:hover {
+    -fx-background-color: #555;
+}
+
+/* Sidebar nav buttons */
+.sidebar-btn {
+    -fx-background-color: #3a3a40;
+    -fx-text-fill: #ccc;
+    -fx-font-size: 9px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-padding: 6 4;
+}
+.sidebar-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.03);
+}
+
+/* iOS26 Liquid glass theme for buttons and panels */
+.calc-button {
+    -fx-background-color: rgba(36,39,46,0.6);
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+}
+.calc-button:hover { -fx-background-color: rgba(46,49,56,0.7); }
+
+/* Special function buttons (gray) */
+.calc-button.ac,
+.calc-button.special {
+    -fx-background-color: rgba(160,160,160,0.9);
+    -fx-text-fill: #111;
+}
+
+/* Operator / equals (accent orange) */
+.calc-button.operator,
+.calc-button.equals {
+    -fx-background-color: linear-gradient(to bottom, #ff9500 0%, #ff7b00 100%);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(255,149,0,0.22), 10, 0.35, 0, 3);
+}
+.calc-button.operator:hover, .calc-button.equals:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffb143 0%, #ff9a2a 100%);
+}
+
+/* Scientific functions */
+.sci-button {
+    -fx-background-color: rgba(60,63,70,0.6);
+    -fx-text-fill: #0ff;
+}
+.sci-button:hover { -fx-background-color: rgba(70,73,80,0.7); }
+
+/* Memory buttons */
+.mem-button {
+    -fx-background-color: rgba(100,100,110,0.55);
+    -fx-text-fill: #ffeb3b;
+}
+.mem-button:hover { -fx-background-color: rgba(110,110,120,0.65); }
+
+/* Other buttons */
+.convert-button { -fx-background-color: linear-gradient(to bottom, #ff9500, #ff7b00); -fx-text-fill: white; }
+.fav-button { -fx-background-color: rgba(50,53,60,0.6); -fx-text-fill: #ddd; }
+.dialog-button { -fx-background-color: rgba(80,80,90,0.6); -fx-text-fill: white; }
+.sidebar-btn {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-text-fill: #e6e6e6;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 6 8;
+}
+.rail-btn {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-width: 0.6;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 8, 0.3, 0, 3);
+}
+
+/* Slightly darker status bar background for contrast */
+.status-bar {
+    -fx-background-color: rgba(6,6,6,0.64);
+    -fx-padding: 6 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+/* Status dot and labels for bottom status bar */
+.status-dot {
+    -fx-background-color: #777;
+    -fx-background-radius: 6;
+    -fx-min-width: 10;
+    -fx-min-height: 10;
+    -fx-pref-width: 10;
+    -fx-pref-height: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 6, 0.4, 0, 1);
+}
+.status-dot.ok { -fx-background-color: #4caf50; }
+.status-dot.warn { -fx-background-color: #ffb300; }
+.status-dot.off { -fx-background-color: #c62828; }
+.status-dot.unknown { -fx-background-color: #9e9e9e; }
+
+.status-label { -fx-text-fill: #ccc; -fx-font-size: 12px; -fx-alignment: center-left; }
+
+/* Global root background to simulate iOS-style dark blurred backdrop */
+.root {
+    -fx-background-color: linear-gradient(to bottom, rgba(18,20,26,0.9), rgba(12,14,18,0.95));
+}
