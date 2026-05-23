@@ -6,6 +6,7 @@ import Project.model.ScalingDisplay;
 import Project.model.ToastType;
 import Project.service.CurrencyService;
 import Project.service.DBManager;
+import Project.service.HistoryManager;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
