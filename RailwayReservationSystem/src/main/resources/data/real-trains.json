@@ -6,31 +6,100 @@
     "destination": "Howrah",
     "departure": "07.35",
     "arrival": "08.05",
-    "availableSeats": {"2A": 32, "3A": 65, "SL": 130, "2S": 80, "P": 45},
+    "availableSeats": {
+      "2A": 32,
+      "3A": 65,
+      "SL": 130,
+      "2S": 80,
+      "P": 45
+    },
     "baseFare": 1850,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Delhi", "time": "07.35" },
-      { "station": "Ghaziabad", "time": "08.16" },
-      { "station": "Khurja", "time": "09.05" },
-      { "station": "Aligarh", "time": "09.50" },
-      { "station": "Mathura", "time": "11.03" },
-      { "station": "Agra Cantt.", "time": "11.05" },
-      { "station": "Tundla", "time": "11.28" },
-      { "station": "Firozabad", "time": "12.18" },
-      { "station": "Kanpur", "time": "14.55" },
-      { "station": "Fatehpur", "time": "15.53" },
-      { "station": "Prayagraj", "time": "17.40" },
-      { "station": "Mirzapur", "time": "19.18" },
-      { "station": "Pt. Deen Dayal Upadhyaya Jn", "time": "21.23" },
-      { "station": "Buxar", "time": "22.47" },
-      { "station": "Ara", "time": "23.32" },
-      { "station": "Danapur", "time": "00.04" },
-      { "station": "Patna", "time": "00.40" },
-      { "station": "Mokama", "time": "02.27" },
-      { "station": "Asansol", "time": "04.31" },
-      { "station": "Durgapur", "time": "04.36" },
-      { "station": "Howrah", "time": "08.05" }
+      {
+        "station": "Delhi",
+        "time": "07.35"
+      },
+      {
+        "station": "Ghaziabad",
+        "time": "08.16"
+      },
+      {
+        "station": "Khurja",
+        "time": "09.05"
+      },
+      {
+        "station": "Aligarh",
+        "time": "09.50"
+      },
+      {
+        "station": "Mathura",
+        "time": "11.03"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "11.05"
+      },
+      {
+        "station": "Tundla",
+        "time": "11.28"
+      },
+      {
+        "station": "Firozabad",
+        "time": "12.18"
+      },
+      {
+        "station": "Kanpur",
+        "time": "14.55"
+      },
+      {
+        "station": "Fatehpur",
+        "time": "15.53"
+      },
+      {
+        "station": "Prayagraj",
+        "time": "17.40"
+      },
+      {
+        "station": "Mirzapur",
+        "time": "19.18"
+      },
+      {
+        "station": "Pt. Deen Dayal Upadhyaya Jn",
+        "time": "21.23"
+      },
+      {
+        "station": "Buxar",
+        "time": "22.47"
+      },
+      {
+        "station": "Ara",
+        "time": "23.32"
+      },
+      {
+        "station": "Danapur",
+        "time": "00.04"
+      },
+      {
+        "station": "Patna",
+        "time": "00.40"
+      },
+      {
+        "station": "Mokama",
+        "time": "02.27"
+      },
+      {
+        "station": "Asansol",
+        "time": "04.31"
+      },
+      {
+        "station": "Durgapur",
+        "time": "04.36"
+      },
+      {
+        "station": "Howrah",
+        "time": "08.05"
+      }
     ]
   },
   {
@@ -40,25 +109,77 @@
     "destination": "Howrah",
     "departure": "06.00",
     "arrival": "06.00",
-    "availableSeats": {"1A": 18, "2A": 36, "3A": 72, "SL": 140, "2S": 85, "P": 50},
+    "availableSeats": {
+      "1A": 18,
+      "2A": 36,
+      "3A": 72,
+      "SL": 140,
+      "2S": 85,
+      "P": 50
+    },
     "baseFare": 2100,
     "frequency": "Daily",
     "schedule": [
-      { "station": "New Delhi", "time": "06.00" },
-      { "station": "Ghaziabad", "time": "07.00" },
-      { "station": "Aligarh", "time": "08.35" },
-      { "station": "Tundla", "time": "09.55" },
-      { "station": "Firozabad", "time": "10.13" },
-      { "station": "Etawah", "time": "10.38" },
-      { "station": "Kanpur", "time": "13.55" },
-      { "station": "Fatehpur", "time": "15.05" },
-      { "station": "Prayagraj", "time": "17.05" },
-      { "station": "Pt. Deen Dayal Upadhyaya Jn", "time": "20.38" },
-      { "station": "Gaya", "time": "22.00" },
-      { "station": "Dhanbad", "time": "01.20" },
-      { "station": "Asansol", "time": "02.25" },
-      { "station": "Durgapur", "time": "02.30" },
-      { "station": "Howrah", "time": "06.00" }
+      {
+        "station": "New Delhi",
+        "time": "06.00"
+      },
+      {
+        "station": "Ghaziabad",
+        "time": "07.00"
+      },
+      {
+        "station": "Aligarh",
+        "time": "08.35"
+      },
+      {
+        "station": "Tundla",
+        "time": "09.55"
+      },
+      {
+        "station": "Firozabad",
+        "time": "10.13"
+      },
+      {
+        "station": "Etawah",
+        "time": "10.38"
+      },
+      {
+        "station": "Kanpur",
+        "time": "13.55"
+      },
+      {
+        "station": "Fatehpur",
+        "time": "15.05"
+      },
+      {
+        "station": "Prayagraj",
+        "time": "17.05"
+      },
+      {
+        "station": "Pt. Deen Dayal Upadhyaya Jn",
+        "time": "20.38"
+      },
+      {
+        "station": "Gaya",
+        "time": "22.00"
+      },
+      {
+        "station": "Dhanbad",
+        "time": "01.20"
+      },
+      {
+        "station": "Asansol",
+        "time": "02.25"
+      },
+      {
+        "station": "Durgapur",
+        "time": "02.30"
+      },
+      {
+        "station": "Howrah",
+        "time": "06.00"
+      }
     ]
   },
   {
@@ -68,20 +189,54 @@
     "destination": "Howrah",
     "departure": "07.15",
     "arrival": "06.00",
-    "availableSeats": {"2A": 28, "3A": 55, "SL": 130},
+    "availableSeats": {
+      "2A": 28,
+      "3A": 55,
+      "SL": 130
+    },
     "baseFare": 1680,
     "frequency": "W, Sa",
     "schedule": [
-      { "station": "Delhi", "time": "07.15" },
-      { "station": "Aligarh", "time": "09.50" },
-      { "station": "Etawah", "time": "13.45" },
-      { "station": "Kanpur", "time": "13.45" },
-      { "station": "Prayagraj", "time": "16.25" },
-      { "station": "Pt. Deen Dayal Upadhyaya Jn", "time": "19.23" },
-      { "station": "Gaya", "time": "22.05" },
-      { "station": "Dhanbad", "time": "01.15" },
-      { "station": "Asansol", "time": "02.30" },
-      { "station": "Howrah", "time": "06.00" }
+      {
+        "station": "Delhi",
+        "time": "07.15"
+      },
+      {
+        "station": "Aligarh",
+        "time": "09.50"
+      },
+      {
+        "station": "Etawah",
+        "time": "13.45"
+      },
+      {
+        "station": "Kanpur",
+        "time": "13.45"
+      },
+      {
+        "station": "Prayagraj",
+        "time": "16.25"
+      },
+      {
+        "station": "Pt. Deen Dayal Upadhyaya Jn",
+        "time": "19.23"
+      },
+      {
+        "station": "Gaya",
+        "time": "22.05"
+      },
+      {
+        "station": "Dhanbad",
+        "time": "01.15"
+      },
+      {
+        "station": "Asansol",
+        "time": "02.30"
+      },
+      {
+        "station": "Howrah",
+        "time": "06.00"
+      }
     ]
   },
   {
@@ -91,19 +246,53 @@
     "destination": "Rajgir",
     "departure": "13.10",
     "arrival": "10.30",
-    "availableSeats": {"1A": 14, "2A": 28, "3A": 58, "SL": 135, "2S": 80, "P": 45},
+    "availableSeats": {
+      "1A": 14,
+      "2A": 28,
+      "3A": 58,
+      "SL": 135,
+      "2S": 80,
+      "P": 45
+    },
     "baseFare": 1480,
     "frequency": "Daily",
     "schedule": [
-      { "station": "New Delhi", "time": "13.10" },
-      { "station": "Ghaziabad", "time": "13.51" },
-      { "station": "Kanpur", "time": "18.00" },
-      { "station": "Prayagraj", "time": "20.25" },
-      { "station": "Pt. Deen Dayal Upadhyaya Jn", "time": "23.20" },
-      { "station": "Danapur", "time": "21.25" },
-      { "station": "Patna", "time": "02.30" },
-      { "station": "Rajendranagar", "time": "07.23" },
-      { "station": "Kiul", "time": "05.45" }
+      {
+        "station": "New Delhi",
+        "time": "13.10"
+      },
+      {
+        "station": "Ghaziabad",
+        "time": "13.51"
+      },
+      {
+        "station": "Kanpur",
+        "time": "18.00"
+      },
+      {
+        "station": "Prayagraj",
+        "time": "20.25"
+      },
+      {
+        "station": "Pt. Deen Dayal Upadhyaya Jn",
+        "time": "23.20"
+      },
+      {
+        "station": "Danapur",
+        "time": "21.25"
+      },
+      {
+        "station": "Patna",
+        "time": "02.30"
+      },
+      {
+        "station": "Rajendranagar",
+        "time": "07.23"
+      },
+      {
+        "station": "Kiul",
+        "time": "05.45"
+      }
     ]
   },
   {
@@ -113,18 +302,47 @@
     "destination": "Gaya",
     "departure": "12.50",
     "arrival": "02.58",
-    "availableSeats": {"2A": 35, "3A": 70, "SL": 145, "2S": 90},
+    "availableSeats": {
+      "2A": 35,
+      "3A": 70,
+      "SL": 145,
+      "2S": 90
+    },
     "baseFare": 1380,
     "frequency": "Daily",
     "schedule": [
-      { "station": "New Delhi", "time": "12.50" },
-      { "station": "Aligarh", "time": "14.30" },
-      { "station": "Kanpur", "time": "18.30" },
-      { "station": "Prayagraj", "time": "20.25" },
-      { "station": "Pt. Deen Dayal Upadhyaya Jn", "time": "23.20" },
-      { "station": "Sasaram", "time": "00.38" },
-      { "station": "Dehri-on-Sone", "time": "00.52" },
-      { "station": "Gaya", "time": "02.58" }
+      {
+        "station": "New Delhi",
+        "time": "12.50"
+      },
+      {
+        "station": "Aligarh",
+        "time": "14.30"
+      },
+      {
+        "station": "Kanpur",
+        "time": "18.30"
+      },
+      {
+        "station": "Prayagraj",
+        "time": "20.25"
+      },
+      {
+        "station": "Pt. Deen Dayal Upadhyaya Jn",
+        "time": "23.20"
+      },
+      {
+        "station": "Sasaram",
+        "time": "00.38"
+      },
+      {
+        "station": "Dehri-on-Sone",
+        "time": "00.52"
+      },
+      {
+        "station": "Gaya",
+        "time": "02.58"
+      }
     ]
   },
   {
@@ -134,21 +352,59 @@
     "destination": "Sainagar Shirdi",
     "departure": "22.15",
     "arrival": "18.40",
-    "availableSeats": {"2A": 30, "3A": 60, "SL": 120, "2S": 80},
+    "availableSeats": {
+      "2A": 30,
+      "3A": 60,
+      "SL": 120,
+      "2S": 80
+    },
     "baseFare": 1850,
     "frequency": "Thursday, Sunday",
     "schedule": [
-      { "station": "New Delhi", "time": "22.15" },
-      { "station": "Nizamuddin", "time": "22.38" },
-      { "station": "Mathura", "time": "00.08" },
-      { "station": "Agra Cantt.", "time": "00.50" },
-      { "station": "Gwalior", "time": "02.27" },
-      { "station": "Virangana Lakshmibai", "time": "03.50" },
-      { "station": "Bhopal", "time": "07.35" },
-      { "station": "Itarsi", "time": "09.30" },
-      { "station": "Bhusaval", "time": "14.10" },
-      { "station": "Manmad", "time": "16.35" },
-      { "station": "Sainagar Shirdi", "time": "18.40" }
+      {
+        "station": "New Delhi",
+        "time": "22.15"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "22.38"
+      },
+      {
+        "station": "Mathura",
+        "time": "00.08"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "00.50"
+      },
+      {
+        "station": "Gwalior",
+        "time": "02.27"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "03.50"
+      },
+      {
+        "station": "Bhopal",
+        "time": "07.35"
+      },
+      {
+        "station": "Itarsi",
+        "time": "09.30"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "14.10"
+      },
+      {
+        "station": "Manmad",
+        "time": "16.35"
+      },
+      {
+        "station": "Sainagar Shirdi",
+        "time": "18.40"
+      }
     ]
   },
   {
@@ -158,19 +414,51 @@
     "destination": "Itarsi",
     "departure": "23.00",
     "arrival": "10.20",
-    "availableSeats": {"2A": 28, "3A": 55, "SL": 110, "2S": 70},
+    "availableSeats": {
+      "2A": 28,
+      "3A": 55,
+      "SL": 110,
+      "2S": 70
+    },
     "baseFare": 1620,
     "frequency": "Thursday",
     "schedule": [
-      { "station": "New Delhi", "time": "23.00" },
-      { "station": "Mathura", "time": "00.41" },
-      { "station": "Agra Cantt.", "time": "01.25" },
-      { "station": "Gwalior", "time": "02.58" },
-      { "station": "Virangana Lakshmibai", "time": "04.30" },
-      { "station": "Bina", "time": "06.30" },
-      { "station": "Bhopal", "time": "08.30" },
-      { "station": "Rani Kamlapati", "time": "08.55" },
-      { "station": "Itarsi", "time": "10.20" }
+      {
+        "station": "New Delhi",
+        "time": "23.00"
+      },
+      {
+        "station": "Mathura",
+        "time": "00.41"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "01.25"
+      },
+      {
+        "station": "Gwalior",
+        "time": "02.58"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "04.30"
+      },
+      {
+        "station": "Bina",
+        "time": "06.30"
+      },
+      {
+        "station": "Bhopal",
+        "time": "08.30"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "08.55"
+      },
+      {
+        "station": "Itarsi",
+        "time": "10.20"
+      }
     ]
   },
   {
@@ -180,15 +468,34 @@
     "destination": "Bina",
     "departure": "20.40",
     "arrival": "00.50",
-    "availableSeats": {"2A": 25, "3A": 50, "SL": 100},
+    "availableSeats": {
+      "2A": 25,
+      "3A": 50,
+      "SL": 100
+    },
     "baseFare": 980,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Mathura", "time": "20.40" },
-      { "station": "Agra Cantt.", "time": "18.55" },
-      { "station": "Gwalior", "time": "20.43" },
-      { "station": "Virangana Lakshmibai", "time": "22.20" },
-      { "station": "Bina", "time": "00.50" }
+      {
+        "station": "Mathura",
+        "time": "20.40"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "18.55"
+      },
+      {
+        "station": "Gwalior",
+        "time": "20.43"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "22.20"
+      },
+      {
+        "station": "Bina",
+        "time": "00.50"
+      }
     ]
   },
   {
@@ -198,16 +505,40 @@
     "destination": "Bhopal",
     "departure": "18.33",
     "arrival": "23.00",
-    "availableSeats": {"1A": 10, "2A": 22, "3A": 45, "SL": 95, "2S": 60},
+    "availableSeats": {
+      "1A": 10,
+      "2A": 22,
+      "3A": 45,
+      "SL": 95,
+      "2S": 60
+    },
     "baseFare": 1120,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Nizamuddin", "time": "18.33" },
-      { "station": "Agra Cantt.", "time": "21.40" },
-      { "station": "Gwalior", "time": "00.18" },
-      { "station": "Virangana Lakshmibai", "time": "02.05" },
-      { "station": "Bina", "time": "20.30" },
-      { "station": "Bhopal", "time": "23.00" }
+      {
+        "station": "Nizamuddin",
+        "time": "18.33"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "21.40"
+      },
+      {
+        "station": "Gwalior",
+        "time": "00.18"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "02.05"
+      },
+      {
+        "station": "Bina",
+        "time": "20.30"
+      },
+      {
+        "station": "Bhopal",
+        "time": "23.00"
+      }
     ]
   },
   {
@@ -217,14 +548,29 @@
     "destination": "Bhopal",
     "departure": "16.30",
     "arrival": "00.35",
-    "availableSeats": {"CC": 48, "2S": 85},
+    "availableSeats": {
+      "CC": 48,
+      "2S": 85
+    },
     "baseFare": 780,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Khajuraho", "time": "16.30" },
-      { "station": "Lalitpur", "time": "19.23" },
-      { "station": "Bina", "time": "20.30" },
-      { "station": "Bhopal", "time": "00.35" }
+      {
+        "station": "Khajuraho",
+        "time": "16.30"
+      },
+      {
+        "station": "Lalitpur",
+        "time": "19.23"
+      },
+      {
+        "station": "Bina",
+        "time": "20.30"
+      },
+      {
+        "station": "Bhopal",
+        "time": "00.35"
+      }
     ]
   },
   {
@@ -234,18 +580,47 @@
     "destination": "Mumbai CSMT",
     "departure": "16.55",
     "arrival": "11.15",
-    "availableSeats": {"1A": 14, "2A": 28, "3A": 55, "P": 40},
+    "availableSeats": {
+      "1A": 14,
+      "2A": 28,
+      "3A": 55,
+      "P": 40
+    },
     "baseFare": 2650,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Nizamuddin", "time": "16.55" },
-      { "station": "Agra Cantt.", "time": "18.47" },
-      { "station": "Gwalior", "time": "20.08" },
-      { "station": "Virangana Lakshmibai", "time": "21.31" },
-      { "station": "Bhopal", "time": "00.35" },
-      { "station": "Itarsi", "time": "21.55" },
-      { "station": "Bhusaval", "time": "02.30" },
-      { "station": "Mumbai CSMT", "time": "11.15" }
+      {
+        "station": "Nizamuddin",
+        "time": "16.55"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "18.47"
+      },
+      {
+        "station": "Gwalior",
+        "time": "20.08"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "21.31"
+      },
+      {
+        "station": "Bhopal",
+        "time": "00.35"
+      },
+      {
+        "station": "Itarsi",
+        "time": "21.55"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "02.30"
+      },
+      {
+        "station": "Mumbai CSMT",
+        "time": "11.15"
+      }
     ]
   },
   {
@@ -255,11 +630,19 @@
     "destination": "Gwalior",
     "departure": "09.25",
     "arrival": "09.25",
-    "availableSeats": {"2A": 20, "3A": 40, "SL": 80, "2S": 50},
+    "availableSeats": {
+      "2A": 20,
+      "3A": 40,
+      "SL": 80,
+      "2S": 50
+    },
     "baseFare": 650,
     "frequency": "Tuesday, Friday, Saturday",
     "schedule": [
-      { "station": "Gwalior", "time": "09.25" }
+      {
+        "station": "Gwalior",
+        "time": "09.25"
+      }
     ]
   },
   {
@@ -269,12 +652,24 @@
     "destination": "Dhaulpur",
     "departure": "07.10",
     "arrival": "08.00",
-    "availableSeats": {"2A": 18, "3A": 36, "SL": 75, "2S": 45, "P": 30},
+    "availableSeats": {
+      "2A": 18,
+      "3A": 36,
+      "SL": 75,
+      "2S": 45,
+      "P": 30
+    },
     "baseFare": 520,
     "frequency": "Except Saturday",
     "schedule": [
-      { "station": "Agra Cantt.", "time": "07.10" },
-      { "station": "Dhaulpur", "time": "08.00" }
+      {
+        "station": "Agra Cantt.",
+        "time": "07.10"
+      },
+      {
+        "station": "Dhaulpur",
+        "time": "08.00"
+      }
     ]
   },
   {
@@ -284,13 +679,24 @@
     "destination": "Bhopal",
     "departure": "11.15",
     "arrival": "13.40",
-    "availableSeats": {"2S": 120},
+    "availableSeats": {
+      "2S": 120
+    },
     "baseFare": 280,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Bina", "time": "11.15" },
-      { "station": "Vidisha", "time": "12.32" },
-      { "station": "Bhopal", "time": "13.40" }
+      {
+        "station": "Bina",
+        "time": "11.15"
+      },
+      {
+        "station": "Vidisha",
+        "time": "12.32"
+      },
+      {
+        "station": "Bhopal",
+        "time": "13.40"
+      }
     ]
   },
   {
@@ -300,12 +706,24 @@
     "destination": "Rani Kamlapati",
     "departure": "18.15",
     "arrival": "20.20",
-    "availableSeats": {"2A": 22, "3A": 44, "SL": 90, "2S": 55, "P": 35},
+    "availableSeats": {
+      "2A": 22,
+      "3A": 44,
+      "SL": 90,
+      "2S": 55,
+      "P": 35
+    },
     "baseFare": 720,
     "frequency": "Saturday",
     "schedule": [
-      { "station": "Lalitpur", "time": "18.15" },
-      { "station": "Rani Kamlapati", "time": "20.20" }
+      {
+        "station": "Lalitpur",
+        "time": "18.15"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "20.20"
+      }
     ]
   },
   {
@@ -315,18 +733,47 @@
     "destination": "Nizamuddin",
     "departure": "06.00",
     "arrival": "05.00",
-    "availableSeats": {"2A": 28, "3A": 55, "SL": 110, "2S": 70},
+    "availableSeats": {
+      "2A": 28,
+      "3A": 55,
+      "SL": 110,
+      "2S": 70
+    },
     "baseFare": 1950,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Bhusaval", "time": "06.00" },
-      { "station": "Khandwa", "time": "15.17" },
-      { "station": "Itarsi", "time": "17.45" },
-      { "station": "Bhopal", "time": "19.35" },
-      { "station": "Bina", "time": "21.38" },
-      { "station": "Gwalior", "time": "00.38" },
-      { "station": "Agra Cantt.", "time": "02.15" },
-      { "station": "Nizamuddin", "time": "05.00" }
+      {
+        "station": "Bhusaval",
+        "time": "06.00"
+      },
+      {
+        "station": "Khandwa",
+        "time": "15.17"
+      },
+      {
+        "station": "Itarsi",
+        "time": "17.45"
+      },
+      {
+        "station": "Bhopal",
+        "time": "19.35"
+      },
+      {
+        "station": "Bina",
+        "time": "21.38"
+      },
+      {
+        "station": "Gwalior",
+        "time": "00.38"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "02.15"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "05.00"
+      }
     ]
   },
   {
@@ -336,19 +783,51 @@
     "destination": "Bhopal",
     "departure": "06.00",
     "arrival": "19.50",
-    "availableSeats": {"2A": 30, "3A": 60, "SL": 120, "2S": 80},
+    "availableSeats": {
+      "2A": 30,
+      "3A": 60,
+      "SL": 120,
+      "2S": 80
+    },
     "baseFare": 1750,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Lokmanya Tilak (T)", "time": "06.00" },
-      { "station": "Kalyan", "time": "06.37" },
-      { "station": "Nasik Road", "time": "09.10" },
-      { "station": "Manmad", "time": "10.00" },
-      { "station": "Bhusaval", "time": "12.35" },
-      { "station": "Khandwa", "time": "15.17" },
-      { "station": "Itarsi", "time": "18.00" },
-      { "station": "Rani Kamlapati", "time": "19.28" },
-      { "station": "Bhopal", "time": "19.50" }
+      {
+        "station": "Lokmanya Tilak (T)",
+        "time": "06.00"
+      },
+      {
+        "station": "Kalyan",
+        "time": "06.37"
+      },
+      {
+        "station": "Nasik Road",
+        "time": "09.10"
+      },
+      {
+        "station": "Manmad",
+        "time": "10.00"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "12.35"
+      },
+      {
+        "station": "Khandwa",
+        "time": "15.17"
+      },
+      {
+        "station": "Itarsi",
+        "time": "18.00"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "19.28"
+      },
+      {
+        "station": "Bhopal",
+        "time": "19.50"
+      }
     ]
   },
   {
@@ -358,14 +837,32 @@
     "destination": "Gwalior",
     "departure": "22.58",
     "arrival": "03.30",
-    "availableSeats": {"1A": 12, "2A": 25, "3A": 50, "SL": 100, "2S": 65},
+    "availableSeats": {
+      "1A": 12,
+      "2A": 25,
+      "3A": 50,
+      "SL": 100,
+      "2S": 65
+    },
     "baseFare": 1450,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Bhopal", "time": "22.58" },
-      { "station": "Bina", "time": "00.45" },
-      { "station": "Virangana Lakshmibai", "time": "02.27" },
-      { "station": "Gwalior", "time": "03.30" }
+      {
+        "station": "Bhopal",
+        "time": "22.58"
+      },
+      {
+        "station": "Bina",
+        "time": "00.45"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "02.27"
+      },
+      {
+        "station": "Gwalior",
+        "time": "03.30"
+      }
     ]
   },
   {
@@ -375,13 +872,25 @@
     "destination": "New Delhi",
     "departure": "05.45",
     "arrival": "10.00",
-    "availableSeats": {"CC": 55, "2S": 110},
+    "availableSeats": {
+      "CC": 55,
+      "2S": 110
+    },
     "baseFare": 680,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Agra Cantt.", "time": "05.45" },
-      { "station": "Nizamuddin", "time": "09.15" },
-      { "station": "New Delhi", "time": "10.00" }
+      {
+        "station": "Agra Cantt.",
+        "time": "05.45"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "09.15"
+      },
+      {
+        "station": "New Delhi",
+        "time": "10.00"
+      }
     ]
   },
   {
@@ -391,21 +900,59 @@
     "destination": "Gwalior",
     "departure": "08.05",
     "arrival": "04.25",
-    "availableSeats": {"2A": 28, "3A": 55, "SL": 110, "2S": 70},
+    "availableSeats": {
+      "2A": 28,
+      "3A": 55,
+      "SL": 110,
+      "2S": 70
+    },
     "baseFare": 1680,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Lokmanya Tilak (T)", "time": "08.05" },
-      { "station": "Kalyan", "time": "08.37" },
-      { "station": "Nasik Road", "time": "11.25" },
-      { "station": "Manmad", "time": "12.20" },
-      { "station": "Bhusaval", "time": "14.55" },
-      { "station": "Khandwa", "time": "16.55" },
-      { "station": "Itarsi", "time": "19.40" },
-      { "station": "Bhopal", "time": "21.40" },
-      { "station": "Bina", "time": "00.10" },
-      { "station": "Virangana Lakshmibai", "time": "03.05" },
-      { "station": "Gwalior", "time": "04.25" }
+      {
+        "station": "Lokmanya Tilak (T)",
+        "time": "08.05"
+      },
+      {
+        "station": "Kalyan",
+        "time": "08.37"
+      },
+      {
+        "station": "Nasik Road",
+        "time": "11.25"
+      },
+      {
+        "station": "Manmad",
+        "time": "12.20"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "14.55"
+      },
+      {
+        "station": "Khandwa",
+        "time": "16.55"
+      },
+      {
+        "station": "Itarsi",
+        "time": "19.40"
+      },
+      {
+        "station": "Bhopal",
+        "time": "21.40"
+      },
+      {
+        "station": "Bina",
+        "time": "00.10"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "03.05"
+      },
+      {
+        "station": "Gwalior",
+        "time": "04.25"
+      }
     ]
   },
   {
@@ -415,22 +962,64 @@
     "destination": "Nizamuddin",
     "departure": "13.27",
     "arrival": "13.20",
-    "availableSeats": {"2A": 30, "3A": 60, "SL": 120, "2S": 75, "P": 40},
+    "availableSeats": {
+      "2A": 30,
+      "3A": 60,
+      "SL": 120,
+      "2S": 75,
+      "P": 40
+    },
     "baseFare": 2150,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Kalyan", "time": "13.27" },
-      { "station": "Nasik Road", "time": "16.40" },
-      { "station": "Manmad", "time": "17.38" },
-      { "station": "Bhusaval", "time": "20.05" },
-      { "station": "Khandwa", "time": "22.20" },
-      { "station": "Itarsi", "time": "00.55" },
-      { "station": "Bhopal", "time": "02.55" },
-      { "station": "Bina", "time": "04.45" },
-      { "station": "Virangana Lakshmibai", "time": "06.40" },
-      { "station": "Gwalior", "time": "08.00" },
-      { "station": "Agra Cantt.", "time": "09.55" },
-      { "station": "Nizamuddin", "time": "13.20" }
+      {
+        "station": "Kalyan",
+        "time": "13.27"
+      },
+      {
+        "station": "Nasik Road",
+        "time": "16.40"
+      },
+      {
+        "station": "Manmad",
+        "time": "17.38"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "20.05"
+      },
+      {
+        "station": "Khandwa",
+        "time": "22.20"
+      },
+      {
+        "station": "Itarsi",
+        "time": "00.55"
+      },
+      {
+        "station": "Bhopal",
+        "time": "02.55"
+      },
+      {
+        "station": "Bina",
+        "time": "04.45"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "06.40"
+      },
+      {
+        "station": "Gwalior",
+        "time": "08.00"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "09.55"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "13.20"
+      }
     ]
   },
   {
@@ -440,13 +1029,25 @@
     "destination": "Nizamuddin",
     "departure": "16.03",
     "arrival": "19.30",
-    "availableSeats": {"EC": 18, "CC": 48},
+    "availableSeats": {
+      "EC": 18,
+      "CC": 48
+    },
     "baseFare": 1250,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Gwalior", "time": "16.03" },
-      { "station": "Agra Cantt.", "time": "17.40" },
-      { "station": "Nizamuddin", "time": "19.30" }
+      {
+        "station": "Gwalior",
+        "time": "16.03"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "17.40"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "19.30"
+      }
     ]
   },
   {
@@ -456,21 +1057,61 @@
     "destination": "Nizamuddin",
     "departure": "19.35",
     "arrival": "20.55",
-    "availableSeats": {"1A": 12, "2A": 25, "3A": 50, "SL": 100, "2S": 65, "P": 35},
+    "availableSeats": {
+      "1A": 12,
+      "2A": 25,
+      "3A": 50,
+      "SL": 100,
+      "2S": 65,
+      "P": 35
+    },
     "baseFare": 2350,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Mumbai CSMT", "time": "19.35" },
-      { "station": "Kalyan", "time": "20.32" },
-      { "station": "Bhusaval", "time": "02.50" },
-      { "station": "Khandwa", "time": "04.55" },
-      { "station": "Itarsi", "time": "07.50" },
-      { "station": "Rani Kamlapati", "time": "09.45" },
-      { "station": "Bina", "time": "12.00" },
-      { "station": "Virangana Lakshmibai", "time": "15.05" },
-      { "station": "Gwalior", "time": "16.03" },
-      { "station": "Agra Cantt.", "time": "18.00" },
-      { "station": "Nizamuddin", "time": "20.55" }
+      {
+        "station": "Mumbai CSMT",
+        "time": "19.35"
+      },
+      {
+        "station": "Kalyan",
+        "time": "20.32"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "02.50"
+      },
+      {
+        "station": "Khandwa",
+        "time": "04.55"
+      },
+      {
+        "station": "Itarsi",
+        "time": "07.50"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "09.45"
+      },
+      {
+        "station": "Bina",
+        "time": "12.00"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "15.05"
+      },
+      {
+        "station": "Gwalior",
+        "time": "16.03"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "18.00"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "20.55"
+      }
     ]
   },
   {
@@ -480,15 +1121,33 @@
     "destination": "New Delhi",
     "departure": "15.20",
     "arrival": "21.35",
-    "availableSeats": {"CC": 60, "2S": 120},
+    "availableSeats": {
+      "CC": 60,
+      "2S": 120
+    },
     "baseFare": 950,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Virangana Lakshmibai", "time": "15.20" },
-      { "station": "Gwalior", "time": "16.34" },
-      { "station": "Agra Cantt.", "time": "18.15" },
-      { "station": "Nizamuddin", "time": "21.05" },
-      { "station": "New Delhi", "time": "21.35" }
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "15.20"
+      },
+      {
+        "station": "Gwalior",
+        "time": "16.34"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "18.15"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "21.05"
+      },
+      {
+        "station": "New Delhi",
+        "time": "21.35"
+      }
     ]
   },
   {
@@ -498,22 +1157,64 @@
     "destination": "Agra Cantt.",
     "departure": "16.25",
     "arrival": "15.05",
-    "availableSeats": {"2A": 26, "3A": 52, "SL": 105, "2S": 68, "P": 38},
+    "availableSeats": {
+      "2A": 26,
+      "3A": 52,
+      "SL": 105,
+      "2S": 68,
+      "P": 38
+    },
     "baseFare": 1780,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Lokmanya Tilak (T)", "time": "16.25" },
-      { "station": "Kalyan", "time": "17.07" },
-      { "station": "Nasik Road", "time": "19.35" },
-      { "station": "Manmad", "time": "20.41" },
-      { "station": "Bhusaval", "time": "23.25" },
-      { "station": "Khandwa", "time": "01.32" },
-      { "station": "Itarsi", "time": "03.55" },
-      { "station": "Rani Kamlapati", "time": "05.35" },
-      { "station": "Bina", "time": "08.02" },
-      { "station": "Virangana Lakshmibai", "time": "10.40" },
-      { "station": "Gwalior", "time": "12.00" },
-      { "station": "Agra Cantt.", "time": "15.05" }
+      {
+        "station": "Lokmanya Tilak (T)",
+        "time": "16.25"
+      },
+      {
+        "station": "Kalyan",
+        "time": "17.07"
+      },
+      {
+        "station": "Nasik Road",
+        "time": "19.35"
+      },
+      {
+        "station": "Manmad",
+        "time": "20.41"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "23.25"
+      },
+      {
+        "station": "Khandwa",
+        "time": "01.32"
+      },
+      {
+        "station": "Itarsi",
+        "time": "03.55"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "05.35"
+      },
+      {
+        "station": "Bina",
+        "time": "08.02"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "10.40"
+      },
+      {
+        "station": "Gwalior",
+        "time": "12.00"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "15.05"
+      }
     ]
   },
   {
@@ -523,17 +1224,41 @@
     "destination": "New Delhi",
     "departure": "15.15",
     "arrival": "23.50",
-    "availableSeats": {"EC": 20, "CC": 52},
+    "availableSeats": {
+      "EC": 20,
+      "CC": 52
+    },
     "baseFare": 1380,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Rani Kamlapati", "time": "15.15" },
-      { "station": "Bhopal", "time": "15.30" },
-      { "station": "Bina", "time": "17.50" },
-      { "station": "Virangana Lakshmibai", "time": "18.37" },
-      { "station": "Gwalior", "time": "19.40" },
-      { "station": "Agra Cantt.", "time": "21.20" },
-      { "station": "New Delhi", "time": "23.50" }
+      {
+        "station": "Rani Kamlapati",
+        "time": "15.15"
+      },
+      {
+        "station": "Bhopal",
+        "time": "15.30"
+      },
+      {
+        "station": "Bina",
+        "time": "17.50"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "18.37"
+      },
+      {
+        "station": "Gwalior",
+        "time": "19.40"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "21.20"
+      },
+      {
+        "station": "New Delhi",
+        "time": "23.50"
+      }
     ]
   },
   {
@@ -543,22 +1268,63 @@
     "destination": "New Delhi",
     "departure": "23.30",
     "arrival": "03.40",
-    "availableSeats": {"2A": 25, "3A": 50, "SL": 100, "2S": 65},
+    "availableSeats": {
+      "2A": 25,
+      "3A": 50,
+      "SL": 100,
+      "2S": 65
+    },
     "baseFare": 2050,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Mumbai CSMT", "time": "23.30" },
-      { "station": "Kalyan", "time": "00.32" },
-      { "station": "Bhusaval", "time": "06.55" },
-      { "station": "Khandwa", "time": "09.20" },
-      { "station": "Itarsi", "time": "12.40" },
-      { "station": "Rani Kamlapati", "time": "15.27" },
-      { "station": "Bina", "time": "17.50" },
-      { "station": "Virangana Lakshmibai", "time": "20.20" },
-      { "station": "Gwalior", "time": "21.54" },
-      { "station": "Agra Cantt.", "time": "23.50" },
-      { "station": "Nizamuddin", "time": "03.14" },
-      { "station": "New Delhi", "time": "03.40" }
+      {
+        "station": "Mumbai CSMT",
+        "time": "23.30"
+      },
+      {
+        "station": "Kalyan",
+        "time": "00.32"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "06.55"
+      },
+      {
+        "station": "Khandwa",
+        "time": "09.20"
+      },
+      {
+        "station": "Itarsi",
+        "time": "12.40"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "15.27"
+      },
+      {
+        "station": "Bina",
+        "time": "17.50"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "20.20"
+      },
+      {
+        "station": "Gwalior",
+        "time": "21.54"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "23.50"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "03.14"
+      },
+      {
+        "station": "New Delhi",
+        "time": "03.40"
+      }
     ]
   },
   {
@@ -568,18 +1334,47 @@
     "destination": "Agra Cantt.",
     "departure": "06.30",
     "arrival": "00.05",
-    "availableSeats": {"2A": 22, "3A": 44, "SL": 90, "2S": 55},
+    "availableSeats": {
+      "2A": 22,
+      "3A": 44,
+      "SL": 90,
+      "2S": 55
+    },
     "baseFare": 1350,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Chhindwara", "time": "06.30" },
-      { "station": "Itarsi", "time": "14.15" },
-      { "station": "Rani Kamlapati", "time": "15.58" },
-      { "station": "Bhopal", "time": "16.20" },
-      { "station": "Bina", "time": "18.25" },
-      { "station": "Virangana Lakshmibai", "time": "20.40" },
-      { "station": "Gwalior", "time": "22.10" },
-      { "station": "Agra Cantt.", "time": "00.05" }
+      {
+        "station": "Chhindwara",
+        "time": "06.30"
+      },
+      {
+        "station": "Itarsi",
+        "time": "14.15"
+      },
+      {
+        "station": "Rani Kamlapati",
+        "time": "15.58"
+      },
+      {
+        "station": "Bhopal",
+        "time": "16.20"
+      },
+      {
+        "station": "Bina",
+        "time": "18.25"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "20.40"
+      },
+      {
+        "station": "Gwalior",
+        "time": "22.10"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "00.05"
+      }
     ]
   },
   {
@@ -589,18 +1384,47 @@
     "destination": "Nizamuddin",
     "departure": "07.55",
     "arrival": "06.35",
-    "availableSeats": {"1A": 10, "2A": 20, "3A": 40, "P": 30},
+    "availableSeats": {
+      "1A": 10,
+      "2A": 20,
+      "3A": 40,
+      "P": 30
+    },
     "baseFare": 2280,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Lokmanya Tilak (T)", "time": "07.55" },
-      { "station": "Kalyan", "time": "08.32" },
-      { "station": "Nasik Road", "time": "11.05" },
-      { "station": "Bhusaval", "time": "14.25" },
-      { "station": "Itarsi", "time": "20.30" },
-      { "station": "Virangana Lakshmibai", "time": "00.40" },
-      { "station": "Agra Cantt.", "time": "03.40" },
-      { "station": "Nizamuddin", "time": "06.35" }
+      {
+        "station": "Lokmanya Tilak (T)",
+        "time": "07.55"
+      },
+      {
+        "station": "Kalyan",
+        "time": "08.32"
+      },
+      {
+        "station": "Nasik Road",
+        "time": "11.05"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "14.25"
+      },
+      {
+        "station": "Itarsi",
+        "time": "20.30"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "00.40"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "03.40"
+      },
+      {
+        "station": "Nizamuddin",
+        "time": "06.35"
+      }
     ]
   },
   {
@@ -610,17 +1434,43 @@
     "destination": "Indore",
     "departure": "17.15",
     "arrival": "15.20",
-    "availableSeats": {"2A": 25, "3A": 50, "SL": 100, "2S": 65},
+    "availableSeats": {
+      "2A": 25,
+      "3A": 50,
+      "SL": 100,
+      "2S": 65
+    },
     "baseFare": 1450,
     "frequency": "Friday",
     "schedule": [
-      { "station": "Gwalior", "time": "17.15" },
-      { "station": "Bina", "time": "00.53" },
-      { "station": "Shivpuri", "time": "18.50" },
-      { "station": "Guna", "time": "21.10" },
-      { "station": "Bhopal", "time": "01.20" },
-      { "station": "Ujjain", "time": "07.05" },
-      { "station": "Indore", "time": "15.20" }
+      {
+        "station": "Gwalior",
+        "time": "17.15"
+      },
+      {
+        "station": "Bina",
+        "time": "00.53"
+      },
+      {
+        "station": "Shivpuri",
+        "time": "18.50"
+      },
+      {
+        "station": "Guna",
+        "time": "21.10"
+      },
+      {
+        "station": "Bhopal",
+        "time": "01.20"
+      },
+      {
+        "station": "Ujjain",
+        "time": "07.05"
+      },
+      {
+        "station": "Indore",
+        "time": "15.20"
+      }
     ]
   },
   {
@@ -630,22 +1480,63 @@
     "destination": "Daund",
     "departure": "04.05",
     "arrival": "18.20",
-    "availableSeats": {"2A": 22, "3A": 45, "SL": 90, "2S": 60},
+    "availableSeats": {
+      "2A": 22,
+      "3A": 45,
+      "SL": 90,
+      "2S": 60
+    },
     "baseFare": 1680,
     "frequency": "Saturday",
     "schedule": [
-      { "station": "Gwalior", "time": "04.05" },
-      { "station": "Bina", "time": "00.53" },
-      { "station": "Bhopal", "time": "06.50" },
-      { "station": "Ujjain", "time": "07.05" },
-      { "station": "Itarsi", "time": "04.20" },
-      { "station": "Khandwa", "time": "13.10" },
-      { "station": "Bhusaval", "time": "04.25" },
-      { "station": "Vadodara", "time": "07.35" },
-      { "station": "Surat", "time": "09.37" },
-      { "station": "Lonavla", "time": "09.42" },
-      { "station": "Pune", "time": "16.55" },
-      { "station": "Daund", "time": "18.20" }
+      {
+        "station": "Gwalior",
+        "time": "04.05"
+      },
+      {
+        "station": "Bina",
+        "time": "00.53"
+      },
+      {
+        "station": "Bhopal",
+        "time": "06.50"
+      },
+      {
+        "station": "Ujjain",
+        "time": "07.05"
+      },
+      {
+        "station": "Itarsi",
+        "time": "04.20"
+      },
+      {
+        "station": "Khandwa",
+        "time": "13.10"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "04.25"
+      },
+      {
+        "station": "Vadodara",
+        "time": "07.35"
+      },
+      {
+        "station": "Surat",
+        "time": "09.37"
+      },
+      {
+        "station": "Lonavla",
+        "time": "09.42"
+      },
+      {
+        "station": "Pune",
+        "time": "16.55"
+      },
+      {
+        "station": "Daund",
+        "time": "18.20"
+      }
     ]
   },
   {
@@ -655,19 +1546,51 @@
     "destination": "Pune",
     "departure": "21.40",
     "arrival": "18.25",
-    "availableSeats": {"1A": 10, "2A": 20, "3A": 40, "P": 30},
+    "availableSeats": {
+      "1A": 10,
+      "2A": 20,
+      "3A": 40,
+      "P": 30
+    },
     "baseFare": 2150,
     "frequency": "Friday",
     "schedule": [
-      { "station": "Nizamuddin", "time": "21.40" },
-      { "station": "Mathura", "time": "00.50" },
-      { "station": "Agra Cantt.", "time": "01.50" },
-      { "station": "Virangana Lakshmibai", "time": "22.20" },
-      { "station": "Bhopal", "time": "12.40" },
-      { "station": "Vadodara", "time": "09.27" },
-      { "station": "Surat", "time": "11.17" },
-      { "station": "Lonavla", "time": "11.22" },
-      { "station": "Pune", "time": "18.25" }
+      {
+        "station": "Nizamuddin",
+        "time": "21.40"
+      },
+      {
+        "station": "Mathura",
+        "time": "00.50"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "01.50"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "22.20"
+      },
+      {
+        "station": "Bhopal",
+        "time": "12.40"
+      },
+      {
+        "station": "Vadodara",
+        "time": "09.27"
+      },
+      {
+        "station": "Surat",
+        "time": "11.17"
+      },
+      {
+        "station": "Lonavla",
+        "time": "11.22"
+      },
+      {
+        "station": "Pune",
+        "time": "18.25"
+      }
     ]
   },
   {
@@ -677,17 +1600,43 @@
     "destination": "Ujjain",
     "departure": "00.45",
     "arrival": "08.55",
-    "availableSeats": {"2A": 25, "3A": 50, "SL": 100, "2S": 65},
+    "availableSeats": {
+      "2A": 25,
+      "3A": 50,
+      "SL": 100,
+      "2S": 65
+    },
     "baseFare": 1320,
     "frequency": "Wednesday",
     "schedule": [
-      { "station": "Nizamuddin", "time": "00.45" },
-      { "station": "Mathura", "time": "02.26" },
-      { "station": "Agra Cantt.", "time": "18.55" },
-      { "station": "Gwalior", "time": "20.43" },
-      { "station": "Bina", "time": "00.53" },
-      { "station": "Bhopal", "time": "07.45" },
-      { "station": "Ujjain", "time": "08.55" }
+      {
+        "station": "Nizamuddin",
+        "time": "00.45"
+      },
+      {
+        "station": "Mathura",
+        "time": "02.26"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "18.55"
+      },
+      {
+        "station": "Gwalior",
+        "time": "20.43"
+      },
+      {
+        "station": "Bina",
+        "time": "00.53"
+      },
+      {
+        "station": "Bhopal",
+        "time": "07.45"
+      },
+      {
+        "station": "Ujjain",
+        "time": "08.55"
+      }
     ]
   },
   {
@@ -697,14 +1646,31 @@
     "destination": "Virangana Lakshmibai",
     "departure": "06.16",
     "arrival": "22.50",
-    "availableSeats": {"2A": 20, "3A": 40, "SL": 85, "2S": 55},
+    "availableSeats": {
+      "2A": 20,
+      "3A": 40,
+      "SL": 85,
+      "2S": 55
+    },
     "baseFare": 980,
     "frequency": "Thursday",
     "schedule": [
-      { "station": "Nizamuddin", "time": "06.16" },
-      { "station": "Agra Cantt.", "time": "03.05" },
-      { "station": "Gwalior", "time": "05.10" },
-      { "station": "Virangana Lakshmibai", "time": "22.50" }
+      {
+        "station": "Nizamuddin",
+        "time": "06.16"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "03.05"
+      },
+      {
+        "station": "Gwalior",
+        "time": "05.10"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "22.50"
+      }
     ]
   },
   {
@@ -714,17 +1680,43 @@
     "destination": "Pune",
     "departure": "22.40",
     "arrival": "02.10",
-    "availableSeats": {"1A": 10, "2A": 20, "3A": 40, "P": 30},
+    "availableSeats": {
+      "1A": 10,
+      "2A": 20,
+      "3A": 40,
+      "P": 30
+    },
     "baseFare": 2250,
     "frequency": "Monday, Thursday",
     "schedule": [
-      { "station": "Nizamuddin", "time": "22.40" },
-      { "station": "Agra Cantt.", "time": "19.35" },
-      { "station": "Gwalior", "time": "21.18" },
-      { "station": "Virangana Lakshmibai", "time": "03.50" },
-      { "station": "Bina", "time": "06.35" },
-      { "station": "Bhopal", "time": "08.40" },
-      { "station": "Pune", "time": "02.10" }
+      {
+        "station": "Nizamuddin",
+        "time": "22.40"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "19.35"
+      },
+      {
+        "station": "Gwalior",
+        "time": "21.18"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "03.50"
+      },
+      {
+        "station": "Bina",
+        "time": "06.35"
+      },
+      {
+        "station": "Bhopal",
+        "time": "08.40"
+      },
+      {
+        "station": "Pune",
+        "time": "02.10"
+      }
     ]
   },
   {
@@ -734,23 +1726,64 @@
     "destination": "Hazur Sahib Nanded",
     "departure": "05.45",
     "arrival": "01.00",
-    "availableSeats": {"3A": 70},
+    "availableSeats": {
+      "3A": 70
+    },
     "baseFare": 2450,
     "frequency": "Sunday",
     "schedule": [
-      { "station": "Jammu Tawi", "time": "05.45" },
-      { "station": "Jalandhar Cantt.", "time": "09.25" },
-      { "station": "Ludhiana", "time": "10.20" },
-      { "station": "Ambala Cantt.", "time": "13.40" },
-      { "station": "Mathura", "time": "18.53" },
-      { "station": "Agra Cantt.", "time": "00.45" },
-      { "station": "Gwalior", "time": "02.55" },
-      { "station": "Virangana Lakshmibai", "time": "04.30" },
-      { "station": "Bina", "time": "07.35" },
-      { "station": "Bhopal", "time": "08.40" },
-      { "station": "Itarsi", "time": "10.25" },
-      { "station": "Khandwa", "time": "00.30" },
-      { "station": "Hazur Sahib Nanded", "time": "01.00" }
+      {
+        "station": "Jammu Tawi",
+        "time": "05.45"
+      },
+      {
+        "station": "Jalandhar Cantt.",
+        "time": "09.25"
+      },
+      {
+        "station": "Ludhiana",
+        "time": "10.20"
+      },
+      {
+        "station": "Ambala Cantt.",
+        "time": "13.40"
+      },
+      {
+        "station": "Mathura",
+        "time": "18.53"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "00.45"
+      },
+      {
+        "station": "Gwalior",
+        "time": "02.55"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "04.30"
+      },
+      {
+        "station": "Bina",
+        "time": "07.35"
+      },
+      {
+        "station": "Bhopal",
+        "time": "08.40"
+      },
+      {
+        "station": "Itarsi",
+        "time": "10.25"
+      },
+      {
+        "station": "Khandwa",
+        "time": "00.30"
+      },
+      {
+        "station": "Hazur Sahib Nanded",
+        "time": "01.00"
+      }
     ]
   },
   {
@@ -760,17 +1793,43 @@
     "destination": "Hazur Sahib Nanded",
     "departure": "22.40",
     "arrival": "23.45",
-    "availableSeats": {"2A": 22, "3A": 45, "SL": 90, "2S": 60},
+    "availableSeats": {
+      "2A": 22,
+      "3A": 45,
+      "SL": 90,
+      "2S": 60
+    },
     "baseFare": 1950,
     "frequency": "Wednesday",
     "schedule": [
-      { "station": "Nizamuddin", "time": "22.40" },
-      { "station": "Mathura", "time": "00.41" },
-      { "station": "Agra Cantt.", "time": "01.20" },
-      { "station": "Virangana Lakshmibai", "time": "04.30" },
-      { "station": "Bina", "time": "08.30" },
-      { "station": "Bhopal", "time": "08.40" },
-      { "station": "Hazur Sahib Nanded", "time": "23.45" }
+      {
+        "station": "Nizamuddin",
+        "time": "22.40"
+      },
+      {
+        "station": "Mathura",
+        "time": "00.41"
+      },
+      {
+        "station": "Agra Cantt.",
+        "time": "01.20"
+      },
+      {
+        "station": "Virangana Lakshmibai",
+        "time": "04.30"
+      },
+      {
+        "station": "Bina",
+        "time": "08.30"
+      },
+      {
+        "station": "Bhopal",
+        "time": "08.40"
+      },
+      {
+        "station": "Hazur Sahib Nanded",
+        "time": "23.45"
+      }
     ]
   },
   {
@@ -780,12 +1839,23 @@
     "destination": "Hazur Sahib Nanded",
     "departure": "19.45",
     "arrival": "23.45",
-    "availableSeats": {"2A": 20, "3A": 40, "SL": 80, "2S": 50},
+    "availableSeats": {
+      "2A": 20,
+      "3A": 40,
+      "SL": 80,
+      "2S": 50
+    },
     "baseFare": 1250,
     "frequency": "Friday",
     "schedule": [
-      { "station": "Itarsi", "time": "19.45" },
-      { "station": "Hazur Sahib Nanded", "time": "23.45" }
+      {
+        "station": "Itarsi",
+        "time": "19.45"
+      },
+      {
+        "station": "Hazur Sahib Nanded",
+        "time": "23.45"
+      }
     ]
   },
   {
@@ -795,12 +1865,177 @@
     "destination": "Bhusaval",
     "departure": "19.45",
     "arrival": "04.25",
-    "availableSeats": {"SL": 100, "2S": 70},
+    "availableSeats": {
+      "SL": 100,
+      "2S": 70
+    },
     "baseFare": 580,
     "frequency": "Daily",
     "schedule": [
-      { "station": "Itarsi", "time": "19.45" },
-      { "station": "Bhusaval", "time": "04.25" }
+      {
+        "station": "Itarsi",
+        "time": "19.45"
+      },
+      {
+        "station": "Bhusaval",
+        "time": "04.25"
+      }
     ]
+  },
+  {
+    "trainNo": "12405",
+    "name": "Bhusaval Nizamuddin Tilak (T) Kamlapati Gondwana Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Tu, Su"
+  },
+  {
+    "trainNo": "22129",
+    "name": "Lokmanya Tilak (T) Rani Kamalapati Express",
+    "classes": "2A, 3A, II, SL",
+    "frequency": "Tu"
+  },
+  {
+    "trainNo": "12155",
+    "name": "Prayagraj Nizamuddin Tulsi Express",
+    "classes": "1A, 2A, 3A, SL, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "14211",
+    "name": "Agra Cantt. New Delhi Intercity Express",
+    "classes": "CC, 2S, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "14313",
+    "name": "Lokmanya Tilak (T) Bareilly Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "M"
+  },
+  {
+    "trainNo": "12617",
+    "name": "Ernakulam Nizamuddin Mangala Lakshadweep Express",
+    "classes": "2A, 3A, SL, II, P",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "12049",
+    "name": "Virangana Lakshmibai Jhansi Nizamuddin Gatiman Express",
+    "classes": "EC, CC",
+    "frequency": "Except F"
+  },
+  {
+    "trainNo": "12137",
+    "name": "Mumbai CSMT Firozpur Punjab Mail",
+    "classes": "1A, 2A, 3A, SL, II, P",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "12279",
+    "name": "Virangana Lakshmibai Jhansi New Delhi Taj Express",
+    "classes": "CC, 2S, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "12161",
+    "name": "Lokmanya Tilak (T) Agra Cantt. Lashkar Express",
+    "classes": "2A, 3A, SL, II, P",
+    "frequency": "F"
+  },
+  {
+    "trainNo": "12153",
+    "name": "Lokmanya Tilak (T) Habibganj Express",
+    "classes": "2A, 3A, SL, II, P",
+    "frequency": "Th"
+  },
+  {
+    "trainNo": "12001",
+    "name": "Rani Kamalapati New Delhi Shatabdi Express",
+    "classes": "EC, CC",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "11057",
+    "name": "Mumbai CSMT Amritsar Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "14623",
+    "name": "Chhindwara Firozpur Patalkot Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "12171",
+    "name": "Lokmanya Tilak (T) Haridwar AC Express",
+    "classes": "1A, 2A, 3A, P",
+    "frequency": "M, Th"
+  },
+  {
+    "trainNo": "22455",
+    "name": "Sai Nagar Shirdi Kalka Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Tu, Sa"
+  },
+  {
+    "trainNo": "22709",
+    "name": "Hazur Sahib Nanded Amb Andaura Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Tu"
+  },
+  {
+    "trainNo": "14319",
+    "name": "Indore Bareilly Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Th"
+  },
+  {
+    "trainNo": "11841",
+    "name": "Khajuraho Jn. Kurukshetra Jn. Express",
+    "classes": "2A, 3A, SL, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "22163",
+    "name": "Bhopal-Khajuraho Mahamana SF Express",
+    "classes": "CC, 2S, II",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "22221",
+    "name": "Mumbai CSMT Nizamudin Rajdhani Express",
+    "classes": "1A, 2A, 3A, P",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "22547",
+    "name": "Gwalior Sabarmati Express",
+    "classes": "2A, 3A, SL",
+    "frequency": "W, Sa, Su"
+  },
+  {
+    "trainNo": "19483",
+    "name": "Ahmedabad Barauni Express",
+    "classes": "2A, 3A, SL, II, P",
+    "frequency": "Except Th"
+  },
+  {
+    "trainNo": "11605",
+    "name": "Bhopal Bina MEMU Express",
+    "classes": "2S",
+    "frequency": "Daily"
+  },
+  {
+    "trainNo": "22171",
+    "name": "Pune Rani Kamlapati Express",
+    "classes": "3A",
+    "frequency": "Su"
+  },
+  {
+    "trainNo": "19435",
+    "name": "Ahmedabad Asansol Express",
+    "classes": "2A, 3A, SL, II, P",
+    "frequency": "Th"
   }
 ]
