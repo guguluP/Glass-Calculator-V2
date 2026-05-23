@@ -129,6 +129,8 @@ public final class AppConfig {
      * @return Database password
      */
     public static String getDatabasePassword() {
+        String env = System.getenv("GLASS_CALCULATOR_DB_PASSWORD");
+        if (env != null && !env.isEmpty()) return env;  // bypass prefs entirely for production
         String encrypted = PREFS.get(KEY_DB_PASSWORD, "");
         return encrypted.isEmpty() ? "" : decryptPassword(encrypted);
     }
@@ -165,6 +167,11 @@ public final class AppConfig {
      * @param apiKey The API key (will be stored securely)
      */
     public static void setApiKey(String apiKey) {
+        String env = System.getenv("GLASS_CALCULATOR_API_KEY");
+        if (env != null && !env.isEmpty()) {
+            log.info("Using API key from environment variable (prefs ignored)");
+            return;
+        }
         PREFS.put(KEY_API_KEY, encryptPassword(apiKey));
         try {
             PREFS.flush();
@@ -179,6 +186,8 @@ public final class AppConfig {
      * @return The API key, or empty string if not configured
      */
     public static String getApiKey() {
+        String env = System.getenv("GLASS_CALCULATOR_API_KEY");
+        if (env != null && !env.isEmpty()) return env;  // bypass prefs entirely for production
         String encrypted = PREFS.get(KEY_API_KEY, "");
         return encrypted.isEmpty() ? "" : decryptPassword(encrypted);
     }
@@ -194,6 +203,11 @@ public final class AppConfig {
     // ════════════════════════════════════════════════════════════════
     // SECURITY / ENCRYPTION  (JCA AES-256-CBC, with legacy XOR fallback)
     // ════════════════════════════════════════════════════════════════
+    // Prefs storage uses AES with embedded key (obfuscation, not true secrecy).
+    // For production/distributed builds, set GLASS_CALCULATOR_API_KEY env var
+    // or integrate OS keychain (e.g. via jkeyring, keychain4j).
+    // Never logs or prints the key. Local var in fetchRates is short-lived.
+    // Env var takes precedence over prefs (see getApiKey / getDatabasePassword).
 
     private static final byte[] SECRET_KEY =
         "GlassCalc2024!AES256SecureKey32B".getBytes(StandardCharsets.UTF_8); // 32 bytes

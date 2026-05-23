@@ -26,7 +26,13 @@ import org.slf4j.LoggerFactory;
 public class GlassCalculator extends Application {
 
     private static final Logger log = LoggerFactory.getLogger(GlassCalculator.class);
-    private static Stage primaryStageRef;  // for dialog owner + macOS error dialog stability
+    private static Stage primaryStageRef;  // retained static for global uncaught handler (pre-instance); single-window app mitigates multi-window concerns. Prefer instance in future refactors.
+
+    // Simple theme palette (extracted from inline hardcodes for flexibility; future CSS or ThemeManager can extend)
+    private static final String PALETTE_DARK_BG = "#222";
+    private static final String PALETTE_ACCENT_GREEN = "#0f0";
+    private static final String PALETTE_MUTED = "#666";
+    private static final String PALETTE_LIGHT_TEXT = "#ccc";
     private final CalculatorEngine engine = new CalculatorEngine();
     private final CurrencyService fx = new CurrencyService();
     private DBManager db;  // for database-backed history (used together with Preferences)
@@ -159,7 +165,7 @@ public class GlassCalculator extends Application {
         historyList.setMaxHeight(120);
         historyList.setStyle(
             "-fx-background-color: rgba(20,20,25,0.6);" +
-            "-fx-text-fill: #ccc;" +
+            "-fx-text-fill: " + PALETTE_LIGHT_TEXT + ";" +
             "-fx-background-radius: 10;"
         );
         // Memory status bar (💾 M: value)
@@ -613,7 +619,7 @@ public class GlassCalculator extends Application {
 
     private Label makeCurrencyLabel(String text) {
         Label l = new Label(text);
-        l.setStyle("-fx-text-fill: #ccc; -fx-font-size: 12px;");
+        l.setStyle("-fx-text-fill: " + PALETTE_LIGHT_TEXT + "; -fx-font-size: 12px;");
         return l;
     }
 
@@ -626,7 +632,7 @@ public class GlassCalculator extends Application {
 
         amountField = new TextField("100");
         amountField.setFont(getFont(20));
-        amountField.setStyle("-fx-background-color: #222; -fx-text-fill: white;");
+        amountField.setStyle("-fx-background-color: " + PALETTE_DARK_BG + "; -fx-text-fill: white;");
         HBox.setHgrow(amountField, Priority.ALWAYS);
 
         fromBox = new ComboBox<>(FXCollections.observableArrayList(CURRENCIES));
@@ -642,11 +648,11 @@ public class GlassCalculator extends Application {
 
         currencyResult = new Label("—");
         currencyResult.setFont(getFont(28));
-        currencyResult.setStyle("-fx-text-fill: #0f0;");
+        currencyResult.setStyle("-fx-text-fill: " + PALETTE_ACCENT_GREEN + ";");
         HBox.setHgrow(currencyResult, Priority.ALWAYS);
 
         currencyStatus = new Label("Rates via exchangerate-api.com");
-        currencyStatus.setStyle("-fx-text-fill: #666; -fx-font-size: 11px;");
+        currencyStatus.setStyle("-fx-text-fill: " + PALETTE_MUTED + "; -fx-font-size: 11px;");
 
         HBox amountRow = new HBox(8, makeCurrencyLabel("Amount"), amountField);
         HBox.setHgrow(amountField, Priority.ALWAYS);
@@ -1402,15 +1408,19 @@ public class GlassCalculator extends Application {
      * This is a performance optimization for JavaFX font instantiation
      */
     private void initFontCache() {
-        cachedFont12 = Font.font(12);
-        cachedFont14 = Font.font(14);
-        cachedFont16 = Font.font(16);
-        cachedFont18 = Font.font(18);
-        cachedFont20 = Font.font(20);
+        // Use system default font family for better platform integration / future system theme (light/dark) support.
+        // Previously stubbed with hardcoded; now detects via Font.getDefault().
+        String family = Font.getDefault().getFamily();
+        cachedFont12 = Font.font(family, 12);
+        cachedFont14 = Font.font(family, 14);
+        cachedFont16 = Font.font(family, 16);
+        cachedFont18 = Font.font(family, 18);
+        cachedFont20 = Font.font(family, 20);
     }
 
     /**
-     * Get cached font, avoids expensive Font.font() instantiation
+     * Get cached font (system family), avoids expensive Font.font() instantiation.
+     * Supports future dynamic theme (e.g. system dark mode font tweaks).
      */
     private Font getFont(double size) {
         if (size == 12) return cachedFont12;
@@ -1426,7 +1436,11 @@ public class GlassCalculator extends Application {
      * inner highlights, and specular effects for deep dimensionality.
      * Uses caching to avoid repeated string allocations for common opacity values.
      */
-    private void applyGlassEffect(javafx.scene.Node node, double baseOpacity) {
+    /**
+     * Public JavaFX integration helper: applies the advanced glassmorphism effect to any Node/Region.
+     * Exposed for custom panes, dialogs, or external UI components.
+     */
+    public void applyGlassEffect(javafx.scene.Node node, double baseOpacity) {
         // Check cache first to avoid recomputing style string
         String cachedStyle = glassEffectCache.get(baseOpacity);
         
@@ -1454,9 +1468,39 @@ public class GlassCalculator extends Application {
         node.setCacheHint(javafx.scene.CacheHint.SPEED);
     }
 
+    /**
+     * Invalidates theme-related caches (glass styles, fonts) when switching themes (dark/light/system).
+     * Strengthens caching logic per review; call before re-applying styles on theme change.
+     */
+    public void invalidateThemeCaches() {
+        glassEffectCache.clear();
+        // fonts are cheap to re-init; re-run init if family changes (e.g. system theme)
+        initFontCache();
+        log.info("Theme caches invalidated for potential light/dark/system switch");
+    }
+
+    /**
+     * JavaFX integration helper: applies glass theme to an entire Scene's root.
+     */
+    public void applyGlassToScene(javafx.scene.Scene scene) {
+        if (scene != null && scene.getRoot() != null) {
+            applyGlassEffect(scene.getRoot(), 0.05);
+        }
+    }
+
+    /**
+     * Convenience for styling labels with muted palette color.
+     */
+    public void applyMutedStyle(javafx.scene.control.Labeled labeled) {
+        if (labeled != null) {
+            String s = labeled.getStyle() == null ? "" : labeled.getStyle() + "; ";
+            labeled.setStyle(s + "-fx-text-fill: " + PALETTE_MUTED + ";");
+        }
+    }
+
     // ==================== Animation Helpers (Improved Overall Feel) ====================
 
-    private static void animateScale(javafx.scene.Node node, double from, double to, int durationMs) {
+    private void animateScale(javafx.scene.Node node, double from, double to, int durationMs) {
         javafx.animation.ScaleTransition st = new javafx.animation.ScaleTransition(javafx.util.Duration.millis(durationMs), node);
         st.setFromX(from);
         st.setFromY(from);
@@ -1466,7 +1510,7 @@ public class GlassCalculator extends Application {
         st.play();
     }
 
-    private static void animateFade(javafx.scene.Node node, double from, double to, int durationMs) {
+    private void animateFade(javafx.scene.Node node, double from, double to, int durationMs) {
         javafx.animation.FadeTransition ft = new javafx.animation.FadeTransition(javafx.util.Duration.millis(durationMs), node);
         ft.setFromValue(from);
         ft.setToValue(to);

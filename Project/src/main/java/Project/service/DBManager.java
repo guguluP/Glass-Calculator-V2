@@ -2,6 +2,7 @@ package Project.service;
 
 import java.sql.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import javafx.application.Platform;
 import Project.config.AppConfig;
 
@@ -13,6 +14,8 @@ import org.slf4j.LoggerFactory;
 /**
  * Database manager with improved security, thread safety, and reconnection logic.
  * Now uses AppConfig for secure credential storage.
+ * Further hardened: daemon executor + reliable shutdown (no leaks), volatiles + Atomic for TS,
+ * init split for clarity, build always refreshes, MySQL params (useSSL etc) configurable via env.
  *
  * @author GlassCalculator Team
  * @version 1.0
@@ -22,22 +25,28 @@ public class DBManager {
     private static final int RECONNECT_DELAY_MS = 1000;
     private static final int EXPRESSION_MAX_LENGTH = 500;
     private static final int RESULT_MAX_LENGTH = 100;
+    /** Default MySQL JDBC params (local-friendly). Override via env GLASS_MYSQL_PARAMS for remote/prod (e.g. "useSSL=true&..."). */
+    private static final String MYSQL_CONN_PARAMS = "useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&autoReconnect=true";
     private static final Logger log = LoggerFactory.getLogger(DBManager.class);
 
-    // Core runtime fields
-    private ExecutorService dbExec = Executors.newSingleThreadExecutor();
-    private HikariDataSource dataSource;
+    // Core runtime fields (thread-safe where cross-thread accessed)
+    private final ExecutorService dbExec = Executors.newSingleThreadExecutor(r -> {
+        Thread t = new Thread(r, "DB-Worker");
+        t.setDaemon(true);
+        return t;
+    });
+    private volatile HikariDataSource dataSource;
     private volatile boolean ready = false;
     private volatile boolean driverLoaded = false;
-    private int reconnectAttempts = 0;
+    private final AtomicInteger reconnectAttempts = new AtomicInteger(0);
 
-    private String jdbcUrl;
-    private String username;
-    private String password;
-    private String host;
-    private String dbName;
-    private String dbType;
-    private int port;
+    private volatile String jdbcUrl;
+    private volatile String username;
+    private volatile String password;
+    private volatile String host;
+    private volatile String dbName;
+    private volatile String dbType;
+    private volatile int port;
 
     public DBManager() {
         // No-argument constructor for pure JavaFX usage
@@ -58,39 +67,21 @@ public class DBManager {
                     return;
                 }
 
-                // Build JDBC URL based on database type
+                // Build JDBC URL based on database type (refreshes config)
                 String dbType = AppConfig.getDatabaseType().toLowerCase();
                 buildJdbcUrl(dbType);
 
-                // Attempt to load driver based on database type
+                // Attempt to load driver based on database type (extracted)
                 try {
-                    switch (dbType) {
-                        case "mysql":
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            break;
-                        case "sqlite":
-                            Class.forName("org.sqlite.JDBC");
-                            break;
-                        case "postgresql":
-                            Class.forName("org.postgresql.Driver");
-                            break;
-                        default:
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                    }
-                    driverLoaded = true;
-                    log.info("JDBC driver loaded for {}", dbType);
+                    loadDriver(dbType);
                 } catch (ClassNotFoundException cnfe) {
                     log.error("JDBC driver NOT found for {} - make sure {} is in classpath", dbType, getDriverName(dbType));
                     driverLoaded = false;
                     return;
                 }
 
-                // Try to connect and ensure database exists
-                ensureDatabase();
-                setupDataSource();
-                createTable();
-                ready = true;
-                log.info("Database connected and ready via HikariCP pool");
+                // Try to connect and ensure database exists (extracted)
+                completeInitialization();
                 // No UI callback needed in pure JavaFX version
 
             } catch (SQLException e) {
@@ -105,6 +96,7 @@ public class DBManager {
 
     /**
      * Builds and caches JDBC URL based on database type.
+     * Always reads fresh from AppConfig (supports dynamic changes). MySQL SSL/params overridable via GLASS_MYSQL_PARAMS env.
      */
     private void buildJdbcUrl(String dbType) {
         // Cache configuration values to avoid repeated AppConfig lookups
@@ -115,11 +107,14 @@ public class DBManager {
         this.port = AppConfig.getDatabasePort();
         this.dbName = AppConfig.getDatabaseName();
 
+        // Support runtime override for remote/prod DBs (e.g. useSSL=true) via env var
+        String mysqlParams = System.getenv().getOrDefault("GLASS_MYSQL_PARAMS", MYSQL_CONN_PARAMS);
+
         switch (dbType) {
             case "mysql":
                 this.jdbcUrl = String.format(
-                    "jdbc:mysql://%s:%d/%s?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&autoReconnect=true",
-                    host, port, dbName);
+                    "jdbc:mysql://%s:%d/%s?%s",
+                    host, port, dbName, mysqlParams);
                 break;
             case "sqlite":
                 this.jdbcUrl = "jdbc:sqlite:" + dbName + ".db";
@@ -132,8 +127,8 @@ public class DBManager {
             default:
                 // Default to MySQL
                 this.jdbcUrl = String.format(
-                    "jdbc:mysql://%s:%d/%s?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&autoReconnect=true",
-                    host, port, dbName);
+                    "jdbc:mysql://%s:%d/%s?%s",
+                    host, port, dbName, mysqlParams);
         }
     }
 
@@ -147,6 +142,38 @@ public class DBManager {
             case "postgresql" -> "postgresql";
             default -> "MySQL JDBC Driver";
         };
+    }
+
+    /**
+     * Loads the appropriate JDBC driver for the DB type.
+     */
+    private void loadDriver(String dbType) throws ClassNotFoundException {
+        switch (dbType) {
+            case "mysql":
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                break;
+            case "sqlite":
+                Class.forName("org.sqlite.JDBC");
+                break;
+            case "postgresql":
+                Class.forName("org.postgresql.Driver");
+                break;
+            default:
+                Class.forName("com.mysql.cj.jdbc.Driver");
+        }
+        driverLoaded = true;
+        log.info("JDBC driver loaded for {}", dbType);
+    }
+
+    /**
+     * Completes post-driver init steps: ensure DB, setup pool, create schema, mark ready.
+     */
+    private void completeInitialization() throws Exception {
+        ensureDatabase();
+        setupDataSource();
+        createTable();
+        ready = true;
+        log.info("Database connected and ready via HikariCP pool");
     }
 
     /**
@@ -232,17 +259,17 @@ public class DBManager {
 
     public void shutdown() {
         ready = false;
-        dbExec.execute(() -> {
-            try {
-                if (dataSource != null && !dataSource.isClosed()) {
-                    dataSource.close();
-                    log.info("HikariCP pool closed");
-                }
-            } catch (Exception ignored) {
+        // Close dataSource directly (thread-safe); do not submit to executor being shut down
+        // to guarantee resource release and avoid thread leak / task-not-run on exit.
+        try {
+            if (dataSource != null && !dataSource.isClosed()) {
+                dataSource.close();
+                log.info("HikariCP pool closed");
             }
-        });
+        } catch (Exception ignored) {
+        }
 
-        // Properly shutdown executor
+        // Properly shutdown executor (daemon threads ensure no leak even if missed)
         try {
             dbExec.shutdown();
             if (!dbExec.awaitTermination(3, TimeUnit.SECONDS)) {
@@ -274,33 +301,33 @@ public class DBManager {
      * Kept for API compatibility and initial config reloads.
      */
     private void reconnectIfNeeded() throws SQLException {
-        if (jdbcUrl == null || username == null) {
-            if (!AppConfig.isDatabaseConfigured()) {
-                ready = false;
-                driverLoaded = false;
-                throw new SQLException("Database not configured");
-            }
-            String dbType = AppConfig.getDatabaseType().toLowerCase();
-            buildJdbcUrl(dbType);
+        // Always refresh from AppConfig to support runtime config changes (e.g. settings UI)
+        if (!AppConfig.isDatabaseConfigured()) {
+            ready = false;
+            driverLoaded = false;
+            throw new SQLException("Database not configured");
         }
+        String dbType = AppConfig.getDatabaseType().toLowerCase();
+        buildJdbcUrl(dbType);
+
         if (dataSource == null || dataSource.isClosed()) {
-            if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+            if (reconnectAttempts.get() >= MAX_RECONNECT_ATTEMPTS) {
                 throw new SQLException("Failed to initialize pool after " + MAX_RECONNECT_ATTEMPTS + " attempts");
             }
             try {
-                reconnectAttempts++;
-                log.info("Initializing HikariCP pool (attempt {})...", reconnectAttempts);
+                int attempt = reconnectAttempts.incrementAndGet();
+                log.info("Initializing HikariCP pool (attempt {})...", attempt);
                 setupDataSource();
-                reconnectAttempts = 0;
+                reconnectAttempts.set(0);
                 ready = true;
                 log.info("HikariCP pool ready");
             } catch (Exception e) {
                 ready = false;
-                if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+                if (reconnectAttempts.get() >= MAX_RECONNECT_ATTEMPTS) {
                     throw new SQLException("Pool initialization failed", e);
                 }
                 try {
-                    long delay = RECONNECT_DELAY_MS * (1L << (reconnectAttempts - 1));
+                    long delay = RECONNECT_DELAY_MS * (1L << (reconnectAttempts.get() - 1));
                     Thread.sleep(Math.min(delay, 30000));
                 } catch (InterruptedException ie) {
                     Thread.currentThread().interrupt();
@@ -324,9 +351,10 @@ public class DBManager {
             String host = AppConfig.getDatabaseHost();
             int port = AppConfig.getDatabasePort();
             String dbName = AppConfig.getDatabaseName();
+            String rootParams = System.getenv().getOrDefault("GLASS_MYSQL_PARAMS", MYSQL_CONN_PARAMS);
             String rootUrl = String.format(
-                "jdbc:mysql://%s:%d/?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-                host, port);
+                "jdbc:mysql://%s:%d/?%s",
+                host, port, rootParams);
 
             try (Connection c = DriverManager.getConnection(rootUrl, username, password);
                  Statement s = c.createStatement()) {

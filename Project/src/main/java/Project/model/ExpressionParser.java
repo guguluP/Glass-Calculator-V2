@@ -1,14 +1,33 @@
 package Project.model;
 
+/**
+ * Recursive descent parser for calculator expressions.
+ * Improvements: custom ExpressionException with pos/token, 'ans'/'last' support,
+ * validate() per suggestion, implicit mul (incl. 2( ), 2sin), explicit div0, reusable ctors.
+ * Evaluating user input is safe (no eval(), no reflection, controlled grammar).
+ */
 public final class ExpressionParser {
     private final String expr;
     private final boolean radians;
     private int pos;
+    private final double lastAns;
 
+    /**
+     * Standard ctor (no previous ans).
+     */
     public ExpressionParser(String expression, boolean radians) {
+        this(expression, radians, Double.NaN);
+    }
+
+    /**
+     * Full ctor supporting previous result via 'ans' or 'last' in expressions (e.g. ans+5).
+     * Pass Double.NaN or omit for no-ans mode.
+     */
+    public ExpressionParser(String expression, boolean radians, double lastAns) {
         this.expr = expression;
         this.radians = radians;
         this.pos = 0;
+        this.lastAns = lastAns;
     }
 
     private void skipWS() {
@@ -19,9 +38,24 @@ public final class ExpressionParser {
         skipWS();
         double v = addSub();
         skipWS();
-        if (pos < expr.length()) throw new ArithmeticException(
-                "Unexpected token at " + pos + ": '" + expr.charAt(pos) + "'");
+        if (pos < expr.length()) throw new ExpressionException(
+                "Unexpected token", pos, currentToken());
         return v;
+    }
+
+    /**
+     * Validates the expression syntax and semantics (domains etc.) before full use.
+     * Throws ExpressionException with position details on failure.
+     * (Current impl re-runs parse for simplicity; result discarded.)
+     */
+    public void validate() throws ArithmeticException {
+        int savedPos = pos;
+        pos = 0;
+        try {
+            parse();
+        } finally {
+            pos = savedPos;
+        }
     }
 
     // ── Grammar ──────────────────────────────────────────────────
@@ -71,7 +105,7 @@ public final class ExpressionParser {
                 pos++;
                 skipWS();
                 double d = unary();   // FIX 1 (cont.): was power()
-                if (d == 0) throw new ArithmeticException("Division by zero");
+                if (d == 0) throw new ExpressionException("Division by zero", pos, currentToken());
                 v /= d;
                 skipWS();
             } else if (startsNewPrimary()) {   // implicit multiplication
@@ -88,6 +122,7 @@ public final class ExpressionParser {
         if (Character.isDigit(c) || c == '.' || c == '(') return true;
 
         // Check for function names and constants without creating substrings
+        // Note: supports implicit multiplication e.g. 2(3+4), 3sin(30), 2ans+1
         return matchesAt("sin(", 4) || matchesAt("cos(", 4) || matchesAt("tan(", 4) ||
                matchesAt("asin(", 5) || matchesAt("acos(", 5) || matchesAt("atan(", 5) ||
                matchesAt("sinh(", 5) || matchesAt("cosh(", 5) || matchesAt("tanh(", 5) ||
@@ -95,6 +130,7 @@ public final class ExpressionParser {
                matchesAt("log2(", 5) || matchesAt("log(", 4) || matchesAt("ln(", 3) ||
                matchesAt("sqrt(", 5) || matchesAt("cbrt(", 5) || matchesAt("pi", 2) ||
                matchesAt("π", 1) || matchesAt("√(", 2) ||
+               matchesAt("ans", 3) || matchesAt("ANS", 3) || matchesAt("last", 4) || matchesAt("LAST", 4) ||
                (c == 'e' && (pos + 1 >= expr.length() || !Character.isLetter(expr.charAt(pos + 1))));
     }
 
@@ -137,7 +173,7 @@ public final class ExpressionParser {
 
     private double primary() throws ArithmeticException {
         skipWS();
-        if (pos >= expr.length()) throw new ArithmeticException("Unexpected end of expression");
+        if (pos >= expr.length()) throw new ExpressionException("Unexpected end of expression", pos, currentToken());
         char c = expr.charAt(pos);
 
         // Number literal (including E-notation)
@@ -196,12 +232,20 @@ public final class ExpressionParser {
             pos++;
             return Math.PI;
         }
+        if (matchesAt("ans", 3) || matchesAt("ANS", 3)) {
+            pos += 3;
+            return Double.isNaN(lastAns) ? 0.0 : lastAns;
+        }
+        if (matchesAt("last", 4) || matchesAt("LAST", 4)) {
+            pos += 4;
+            return Double.isNaN(lastAns) ? 0.0 : lastAns;
+        }
         if (c == 'e' && (pos + 1 >= expr.length() || !Character.isLetter(expr.charAt(pos + 1)))) {
             pos++;
             return Math.E;
         }
 
-        throw new ArithmeticException("Unknown token: '" + expr.charAt(pos) + "' at pos " + pos);
+        throw new ExpressionException("Unknown token", pos, currentToken());
     }
 
     // FIX 3: Removed unused 'tag' parameter (was accepted but never read).
@@ -236,15 +280,38 @@ public final class ExpressionParser {
         try {
             return Double.parseDouble(expr.substring(start, pos));
         } catch (NumberFormatException e) {
-            throw new ArithmeticException("Bad number at " + start);
+            throw new ExpressionException("Bad number", start, expr.substring(start, pos));
         }
     }
 
     private void expect(char ch) throws ArithmeticException {
         skipWS();
         if (pos >= expr.length() || expr.charAt(pos) != ch) {
-            throw new ArithmeticException("Expected '" + ch + "' at position " + pos);
+            throw new ExpressionException("Expected '" + ch + "'", pos, currentToken());
         }
         pos++;
+    }
+
+    /**
+     * Custom exception for expression errors, carrying position and offending token for precise UI feedback / logging.
+     * Extends ArithmeticException for full backward compatibility with existing callers.
+     */
+    public static class ExpressionException extends ArithmeticException {
+        private final int position;
+        private final String token;
+
+        public ExpressionException(String message, int position, String token) {
+            super(message + " [position=" + position + ", token=" + token + "]");
+            this.position = position;
+            this.token = token;
+        }
+
+        public int getPosition() { return position; }
+        public String getToken() { return token; }
+    }
+
+    private String currentToken() {
+        if (pos >= expr.length()) return "<end>";
+        return "'" + expr.charAt(pos) + "'";
     }
 }

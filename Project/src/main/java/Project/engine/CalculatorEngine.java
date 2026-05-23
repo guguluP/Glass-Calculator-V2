@@ -5,6 +5,7 @@ import java.math.BigInteger;
 
 /**
  * Handles core arithmetic evaluation, scientific functions, and result formatting.
+ * Supports lastAns for ans/last in expr via parser. Division errors explicit.
  * (Memory and history management moved to UI layer for separation of concerns.)
  */
 public class CalculatorEngine {
@@ -13,7 +14,15 @@ public class CalculatorEngine {
     //  CALCULATION METHODS
     // ═══════════════════════════════════════════════════════════════════
     public double eval(String expr, boolean radianMode) throws ArithmeticException {
-        return new ExpressionParser(expr, radianMode).parse();
+        return eval(expr, radianMode, Double.NaN);
+    }
+
+    /**
+     * Evaluates expression, with optional last result for 'ans'/'last' references (e.g. ans+5).
+     * Parser creates per-call (acceptable for desktop calc; reuse would need mutable reset()).
+     */
+    public double eval(String expr, boolean radianMode, double lastAns) throws ArithmeticException {
+        return new ExpressionParser(expr, radianMode, lastAns).parse();
     }
 
     public static String fmt(double v) {
@@ -39,6 +48,7 @@ public class CalculatorEngine {
     }
 
     public double reciprocal(double v) {
+        if (v == 0) throw new ArithmeticException("Division by zero");
         return 1.0 / v;
     }
 
