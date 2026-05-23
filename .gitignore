@@ -16,3 +16,6 @@
 /TestMySQL.class
 /TestMySQL.java
 /out
+
+# New RailwayReservationSystem project build artifacts
+/RailwayReservationSystem/target/

@@ -1,0 +1,527 @@
+/* ============================================================
+   RailReserve - Heavy CSS for JavaFX Railway Reservation System
+   Deep navy + saffron theme, heavy glassmorphism, interactive seats,
+   polished cards, buttons, forms, animations.
+   ============================================================ */
+
+.root {
+    -fx-background-color: #0a192f;
+    -fx-font-family: 'Segoe UI', 'San Francisco', system-ui, sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #e2e8f0;
+}
+
+/* Header */
+.rail-header {
+    -fx-background-color: linear-gradient(to bottom, #112240, #0a192f);
+    -fx-border-color: #1e3a5f;
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0.3, 0, 2);
+}
+
+.app-title {
+    -fx-text-fill: #ff9933;
+    -fx-font-weight: bold;
+    -fx-font-size: 26px;
+}
+
+.app-subtitle {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+    -fx-padding: 6 0 0 4;
+}
+
+.user-label {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-padding: 4 10;
+}
+
+/* Buttons - Heavy styling */
+.primary-button {
+    -fx-background-color: #ff9933;
+    -fx-text-fill: #0a192f;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,153,51,0.35), 6, 0.3, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: #ffb366;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.primary-button:pressed {
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+    -fx-background-color: #e67e22;
+}
+
+.secondary-button {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-text-fill: #cbd5e1;
+    -fx-background-radius: 8;
+    -fx-padding: 7 14;
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.danger-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12;
+    -fx-cursor: hand;
+}
+
+.danger-button:hover {
+    -fx-background-color: #f87171;
+}
+
+/* Search form */
+.search-form {
+    -fx-background-color: #112240;
+    -fx-background-radius: 12;
+    -fx-padding: 14;
+    -fx-border-color: #1e3a5f;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.search-container {
+    -fx-background-color: #0a192f;
+}
+
+/* Train cards - heavy glass look */
+.train-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 12 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.55), 14, 0.25, 0, 5);
+    -fx-cursor: hand;
+}
+
+.train-card:hover {
+    -fx-border-color: #ff9933;
+    -fx-effect: dropshadow(gaussian, rgba(255,153,51,0.25), 16, 0.3, 0, 6);
+}
+
+.train-name {
+    -fx-text-fill: #f1f5f9;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+}
+
+.train-route {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+.train-times {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+.availability-pill {
+    -fx-background-color: #1e3a5f;
+    -fx-text-fill: #67e8f9;
+    -fx-font-size: 10px;
+    -fx-padding: 2 8;
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(103,232,249,0.3);
+    -fx-border-radius: 999;
+}
+
+/* Frequency badge from real timetable data (Phase 2) */
+.frequency-pill {
+    -fx-background-color: #334155;
+    -fx-text-fill: #f59e0b;
+    -fx-font-size: 9.5px;
+    -fx-font-weight: 600;
+    -fx-padding: 2 7;
+    -fx-background-radius: 4;
+    -fx-border-color: rgba(245, 158, 11, 0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+}
+
+/* Section titles */
+.section-title {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-padding: 4 0 2 0;
+}
+
+.section-title-small {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+}
+
+/* Seat map - the star of heavy CSS */
+.seat-grid {
+    -fx-background-color: #112240;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-border-color: #1e3a5f;
+    -fx-border-radius: 10;
+}
+
+.seat {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-font-size: 9px;
+    -fx-text-fill: #0a192f;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(0,0,0,0.2);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0.2, 0, 1);
+}
+
+.seat-available {
+    -fx-background-color: #22c55e;
+}
+
+.seat-available:hover {
+    -fx-background-color: #4ade80;
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
+}
+
+.seat-selected {
+    -fx-background-color: #f59e0b;
+    -fx-text-fill: #0a192f;
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+    -fx-border-color: #fbbf24;
+}
+
+.seat-selected:hover {
+    -fx-background-color: #fbbf24;
+}
+
+.seat.booked, .seat:disabled {
+    -fx-background-color: #475569;
+    -fx-opacity: 0.65;
+    -fx-cursor: default;
+}
+
+/* Class toggles */
+.class-toggle {
+    -fx-background-color: #1e3a5f;
+    -fx-text-fill: #cbd5e1;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14;
+    -fx-font-weight: 600;
+}
+
+.class-toggle:selected {
+    -fx-background-color: #ff9933;
+    -fx-text-fill: #0a192f;
+}
+
+.class-toggle:hover {
+    -fx-background-color: #334155;
+}
+
+/* Booking dialog */
+.booking-dialog {
+    -fx-background-color: #0a192f;
+    -fx-background-radius: 14;
+    -fx-padding: 8;
+}
+
+.train-summary {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+    -fx-border-color: rgba(255,153,51,0.2);
+    -fx-border-radius: 10;
+}
+
+.pax-container {
+    -fx-background-color: #112240;
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+}
+
+.fare-label {
+    -fx-text-fill: #ff9933;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* PNR big display */
+.pnr-display {
+    -fx-font-family: 'Courier New', monospace;
+    -fx-font-size: 32px;
+    -fx-text-fill: #ff9933;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(255,153,51,0.08);
+    -fx-background-radius: 8;
+    -fx-padding: 8 20;
+    -fx-border-color: #ff9933;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+}
+
+.pnr-small {
+    -fx-font-family: 'Courier New', monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: #f59e0b;
+    -fx-font-weight: bold;
+}
+
+/* Booking cards */
+.booking-card {
+    -fx-background-color: linear-gradient(to right, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    -fx-background-radius: 10;
+    -fx-padding: 10 14;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 10;
+}
+
+/* Success screen */
+.success-box {
+    -fx-background-color: #112240;
+    -fx-alignment: center;
+    -fx-spacing: 12;
+}
+
+.success-title {
+    -fx-text-fill: #22c55e;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.success-details {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+}
+
+/* Status bar */
+.status-bar {
+    -fx-background-color: #112240;
+    -fx-text-fill: #64748b;
+    -fx-padding: 6 16;
+    -fx-font-size: 11px;
+    -fx-border-color: #1e3a5f;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* Tab styling */
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: #112240;
+    -fx-text-fill: #94a3b8;
+    -fx-padding: 8 20;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: #0a192f;
+    -fx-text-fill: #ff9933;
+    -fx-border-color: #ff9933;
+    -fx-border-width: 0 0 3 0;
+}
+
+/* ComboBox / DatePicker / TextField polish */
+.combo-box, .date-picker, .text-field {
+    -fx-background-color: #1e3a5f;
+    -fx-text-fill: #e2e8f0;
+    -fx-background-radius: 6;
+    -fx-border-color: #334155;
+    -fx-border-radius: 6;
+}
+
+.combo-box:hover, .date-picker:hover, .text-field:focused {
+    -fx-border-color: #ff9933;
+}
+
+.combo-box .list-cell, .combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #e2e8f0;
+    -fx-background-color: #112240;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #1e3a5f;
+}
+
+/* ListView base */
+.list-view {
+    -fx-background-color: #0a192f;
+    -fx-background-radius: 10;
+    -fx-border-color: #1e3a5f;
+    -fx-border-radius: 10;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0;
+}
+
+/* Admin form labels */
+.admin-container .label {
+    -fx-text-fill: #94a3b8;
+}
+
+/* Scrollbars */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #334155;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #475569;
+}
+
+/* Extra polish */
+.label {
+    -fx-text-fill: #e2e8f0;
+}
+
+.dialog-pane {
+    -fx-background-color: #0a192f;
+}
+
+.button {
+    -fx-focus-traversable: false;
+}
+
+/* ==================== PHASE 3: PAYMENT GATEWAY CSS (Heavy styling) ==================== */
+
+.payment-gateway {
+    -fx-background-color: #0a192f;
+    -fx-background-radius: 14;
+}
+
+.payment-header {
+    -fx-text-fill: #ff9933;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.payment-subheader {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+.payment-method-bar {
+    -fx-background-color: #112240;
+    -fx-background-radius: 10;
+    -fx-padding: 6;
+}
+
+.payment-method-btn {
+    -fx-background-color: #1e3a5f;
+    -fx-text-fill: #cbd5e1;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.payment-method-btn:selected {
+    -fx-background-color: #ff9933;
+    -fx-text-fill: #0a192f;
+    -fx-effect: dropshadow(gaussian, rgba(255,153,51,0.4), 6, 0.3, 0, 2);
+}
+
+.payment-form-area {
+    -fx-background-color: #112240;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+    -fx-min-height: 160;
+}
+
+.payment-form {
+    -fx-spacing: 8;
+}
+
+.form-section {
+    -fx-text-fill: #f59e0b;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+}
+
+.payment-input {
+    -fx-background-color: #1e3a5f;
+    -fx-text-fill: #e2e8f0;
+    -fx-background-radius: 6;
+}
+
+.payment-amount {
+    -fx-text-fill: #ff9933;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.secure-note {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+.processing-label {
+    -fx-text-fill: #f59e0b;
+    -fx-font-style: italic;
+}
+
+.fake-qr {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-padding: 10;
+    -fx-background-color: #1e3a5f;
+    -fx-background-radius: 8;
+}
+
+.note {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+/* Receipt */
+.receipt-box {
+    -fx-background-color: #112240;
+    -fx-background-radius: 12;
+    -fx-border-color: #334155;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.receipt-title {
+    -fx-text-fill: #22c55e;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.txn-id {
+    -fx-font-family: 'Courier New', monospace;
+    -fx-text-fill: #f59e0b;
+    -fx-font-size: 13px;
+}
+
+.receipt-details {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+}
+
+/* Small payment info in My Bookings */
+.payment-info-small {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 10.5px;
+}
